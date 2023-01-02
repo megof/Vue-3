@@ -3,7 +3,8 @@
 console.log(pro.txtclr)
 const pro = defineProps({
     title: String,
-    text: String,
+    id: Number,
+    body: String,
     txtclr:{
         type: String,
         default: "danger",
@@ -16,8 +17,8 @@ const usemit = defineEmits(['metchangefav'])
 <template>
     <div class="card" @click="usemit('metchangefav', title)">
         <div class="card-body" >
-            <h5 class="card-title" :class="`text-${txtclr}`" >{{ title }}</h5>
-            <p>{{ text }}</p>
+            <h5 class="card-title" :class="`text-${txtclr}`" >{{id}}: {{ title }}</h5>
+            <p>{{ body }}</p>
         </div>
     </div>
 </template>
